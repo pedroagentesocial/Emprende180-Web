@@ -23,14 +23,15 @@ body,
   height: 100%;
 }
 
+/* paleta de marca como tokens de tailwind */
 @theme inline {
-  --color-navy: #0D2B4D;
-  --color-teal: #11A79D;
-  --color-mint: #A7E1DA;
-  --color-offwhite: #F2F4F7;
-  --font-display: 'Lil Grotesk Heavy', sans-serif;
-  --font-subtitle: 'Lil Grotesk Bold', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --color-marino: #0D2B4D;
+  --color-turquesa: #11A79D;
+  --color-menta: #A7E1DA;
+  --color-blanco-hueso: #F2F4F7;
+  --fuente-titulos: 'Lil Grotesk Heavy', sans-serif;
+  --fuente-subtitulos: 'Lil Grotesk Bold', sans-serif;
+  --fuente-texto: 'DM Sans', sans-serif;
 }
 
 * {
@@ -49,47 +50,40 @@ h2, h3, h4 {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #11A79D55; border-radius: 4px; }
 
-@keyframes float {
+/* logo flotante de la banda final */
+@keyframes flotar {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.animacion-flotar { animation: flotar 5s ease-in-out infinite; }
 
-@keyframes countUp {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-float { animation: float 5s ease-in-out infinite; }
-.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
-
-.phase-card {
+/* tarjeta de fase, se eleva al pasar el cursor */
+.tarjeta-fase {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.phase-card:hover {
+.tarjeta-fase:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(13, 43, 77, 0.12);
 }
 
-.cta-btn {
+/* botones cta */
+.boton-cta {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.cta-btn:hover {
+.boton-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(17, 167, 157, 0.4);
 }
 
-.photo-slot {
+/* caja punteada para marcar donde va una foto */
+.marcador-foto {
   background: linear-gradient(135deg, #e8edf2 0%, #d4dce6 100%);
   border: 2px dashed #A7E1DA;
   position: relative;
   overflow: hidden;
 }
-.photo-slot::after {
+.marcador-foto::after {
   content: '';
   position: absolute;
   inset: 0;
