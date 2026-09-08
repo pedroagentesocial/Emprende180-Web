@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" fill="none">
+  <!-- Icon mark -->
+  <g transform="translate(10, 4)">
+    <!-- Outer circle arc top-left (dark navy) -->
+    <path d="M50 14 A36 36 0 0 0 14 50" stroke="#0D2B4D" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- Arrow head top -->
+    <polyline points="44,8 50,14 44,20" stroke="#0D2B4D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Outer circle arc bottom-right (teal) -->
+    <path d="M50 86 A36 36 0 0 0 86 50" stroke="#11A79D" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- Arrow head bottom -->
+    <polyline points="56,92 50,86 56,80" stroke="#11A79D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Person head -->
+    <circle cx="50" cy="41" r="9" fill="#0D2B4D"/>
+    <!-- Person body/shoulders -->
+    <path d="M32 68 Q32 54 50 54 Q68 54 68 68" fill="#0D2B4D"/>
+    <!-- Three decorative lines below -->
+    <line x1="26" y1="78" x2="74" y2="78" stroke="#0D2B4D" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="30" y1="85" x2="70" y2="85" stroke="#11A79D" stroke-width="3" stroke-linecap="round"/>
+    <line x1="34" y1="92" x2="66" y2="92" stroke="#A7E1DA" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <!-- Brand name -->
+  <text x="120" y="52" font-family="Nunito, sans-serif" font-weight="900" font-size="28" fill="#0D2B4D" text-anchor="middle" letter-spacing="-0.5">EMPRENDE</text>
+  <text x="120" y="80" font-family="Nunito, sans-serif" font-weight="900" font-size="38" fill="#11A79D" text-anchor="middle" letter-spacing="-1">180</text>
+  <text x="120" y="100" font-family="Outfit, sans-serif" font-weight="400" font-size="8.5" fill="#0D2B4D" text-anchor="middle" letter-spacing="2" opacity="0.65">TU GIRO DE 180° EMPIEZA AQUÍ</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "description": "Promote a referral program designed for mothers seeking extra income, featuring an engaging interface, bilingual support, and a vibrant color scheme.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Lil Grotesk Heavy';
+  src: url('./assets/fonts/LilGrotesk-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lil Grotesk Bold';
+  src: url('./assets/fonts/LilGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@theme inline {
+  --color-navy: #0D2B4D;
+  --color-teal: #11A79D;
+  --color-mint: #A7E1DA;
+  --color-offwhite: #F2F4F7;
+  --font-display: 'Lil Grotesk Heavy', sans-serif;
+  --font-subtitle: 'Lil Grotesk Bold', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Lil Grotesk Heavy', sans-serif;
+}
+
+h2, h3, h4 {
+  font-family: 'Lil Grotesk Bold', sans-serif;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #11A79D55; border-radius: 4px; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-fade-up { animation: fadeUp 0.6s ease-out forwards; }
+
+.phase-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.phase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(13, 43, 77, 0.12);
+}
+
+.cta-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(17, 167, 157, 0.4);
+}
+
+.photo-slot {
+  background: linear-gradient(135deg, #e8edf2 0%, #d4dce6 100%);
+  border: 2px dashed #A7E1DA;
+  position: relative;
+  overflow: hidden;
+}
+.photo-slot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(167,225,218,0.15) 100%);
+}
