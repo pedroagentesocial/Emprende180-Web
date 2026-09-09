@@ -90,6 +90,27 @@ h2, h3, h4 {
   box-shadow: 0 8px 28px rgba(17, 167, 157, 0.4);
 }
 
+/* enlace de la barra: linea que se desliza de izquierda a derecha al pasar el cursor */
+.enlace-navegacion {
+  position: relative;
+  padding-bottom: 2px;
+}
+.enlace-navegacion::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.enlace-navegacion:hover::after {
+  transform: scaleX(1);
+}
+
 /* caja punteada para marcar donde va una foto */
 .marcador-foto {
   background: linear-gradient(135deg, #e8edf2 0%, #d4dce6 100%);

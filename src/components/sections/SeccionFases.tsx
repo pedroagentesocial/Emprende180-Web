@@ -5,8 +5,8 @@ export default function SeccionFases() {
   const { idioma, textos } = useIdioma()
   return (
     <section
-      id="phases"
-      className="py-16 px-6"
+      id="fases"
+      className="py-16 px-6 scroll-mt-24"
       style={{ background: "#F2F4F7" }}
     >
       <div className="max-w-5xl mx-auto">

@@ -1,7 +1,17 @@
 import type { Traduccion } from "./espanol"
 
 const ingles: Traduccion = {
-  nav: { cta: "Join", lang: "ES" },
+  nav: {
+    cta: "Join",
+    lang: "ES",
+    links: [
+      { titulo: "Program", id: "programa" },
+      { titulo: "Phases", id: "fases" },
+      { titulo: "Values", id: "valores" },
+      { titulo: "Ambassadors", id: "testimonios" },
+      { titulo: "FAQ", id: "preguntas" },
+    ],
+  },
   hero: {
     // one background video with its own text; add another entry here for more videos
     portadas: [

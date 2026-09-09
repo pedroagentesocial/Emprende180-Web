@@ -4,7 +4,11 @@ import { useIdioma } from "@/i18n/ContextoIdioma"
 export default function SeccionValores() {
   const { textos } = useIdioma()
   return (
-    <section className="py-16 px-6" style={{ background: "#0D2B4D" }}>
+    <section
+      id="valores"
+      className="py-16 px-6 scroll-mt-24"
+      style={{ background: "#0D2B4D" }}
+    >
       <div className="max-w-5xl mx-auto">
         <h2
           className="text-4xl md:text-5xl text-center mb-8"

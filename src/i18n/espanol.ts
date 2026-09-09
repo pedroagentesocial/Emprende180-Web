@@ -10,7 +10,17 @@ export type Portada = {
 }
 
 const espanol = {
-  nav: { cta: "Únete", lang: "EN" },
+  nav: {
+    cta: "Únete",
+    lang: "EN",
+    links: [
+      { titulo: "Programa", id: "programa" },
+      { titulo: "Fases", id: "fases" },
+      { titulo: "Valores", id: "valores" },
+      { titulo: "Embajadores", id: "testimonios" },
+      { titulo: "Preguntas", id: "preguntas" },
+    ],
+  },
   hero: {
     // un video de fondo con su propio texto; agregar una portada mas aca es suficiente
     portadas: [

@@ -55,7 +55,7 @@ function ContenidoPortada({ portada, cta, nota }: PropsContenidoPortada) {
           {/* destino del cta "unete" de la barra */}
           <button
             id="join"
-            onClick={() => irALaSeccion("phases")}
+            onClick={() => irALaSeccion("fases")}
             className="boton-cta px-8 py-4 rounded-full text-base font-bold"
             style={{ background: "#11A79D", color: "#F2F4F7" }}
           >

@@ -5,7 +5,11 @@ import PreguntaFrecuente from "@/components/ui/PreguntaFrecuente"
 export default function SeccionPreguntasFrecuentes() {
   const { textos } = useIdioma()
   return (
-    <section className="py-16 px-6" style={{ background: "white" }}>
+    <section
+      id="preguntas"
+      className="py-16 px-6 scroll-mt-24"
+      style={{ background: "white" }}
+    >
       <div className="max-w-3xl mx-auto">
         <h2
           className="text-4xl md:text-5xl mb-8"

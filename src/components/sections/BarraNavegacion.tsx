@@ -28,7 +28,7 @@ export default function BarraNavegacion() {
       }}
     >
       {/* mismo padding horizontal que el texto del hero, para que queden alineados */}
-      <div className="px-8 md:px-16 lg:px-24 py-5 flex items-center justify-between">
+      <div className="px-8 md:px-16 lg:px-24 py-3.5 flex items-center justify-between">
         {/* el logo va en blanco sobre el video y al tocarlo vuelve al inicio */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -42,10 +42,23 @@ export default function BarraNavegacion() {
             style={{ filter: estaDesplazada ? "none" : "brightness(0) invert(1)" }}
           />
         </button>
+        {/* enlaces a las secciones de la pagina */}
+        <div className="hidden lg:flex items-center gap-6">
+          {textos.nav.links.map((enlace) => (
+            <button
+              key={enlace.id}
+              onClick={() => irALaSeccion(enlace.id)}
+              className="enlace-navegacion text-sm cursor-pointer"
+              style={{ color: estaDesplazada ? "#0D2B4D" : "#FFFFFF" }}
+            >
+              {enlace.titulo}
+            </button>
+          ))}
+        </div>
         <div className="flex items-center gap-3">
           <button
             onClick={() => cambiarIdioma(idioma === "es" ? "en" : "es")}
-            className="px-4 py-2 rounded-full text-base font-semibold border transition-all duration-200 hover:scale-105"
+            className="px-3.5 py-1.5 rounded-full text-sm font-semibold border transition-all duration-200 hover:scale-105"
             style={{
               borderColor: estaDesplazada ? "#0D2B4D" : "rgba(255,255,255,0.7)",
               color: estaDesplazada ? "#0D2B4D" : "#FFFFFF",
@@ -57,7 +70,7 @@ export default function BarraNavegacion() {
           {/* "unete" lleva al boton con id="join" del hero */}
           <button
             onClick={() => irALaSeccion("join")}
-            className="boton-cta px-6 py-2.5 rounded-full text-base font-bold hidden sm:block"
+            className="boton-cta px-5 py-2 rounded-full text-sm font-bold hidden sm:block"
             style={{
               background: estaDesplazada ? "#0D2B4D" : "#11A79D",
               color: "#FFFFFF",

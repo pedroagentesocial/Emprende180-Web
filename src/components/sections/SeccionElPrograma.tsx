@@ -5,7 +5,11 @@ import MarcadorDeFoto from "@/components/ui/MarcadorDeFoto"
 export default function SeccionElPrograma() {
   const { textos } = useIdioma()
   return (
-    <section className="py-16 px-6" style={{ background: "#0D2B4D" }}>
+    <section
+      id="programa"
+      className="py-16 px-6 scroll-mt-24"
+      style={{ background: "#0D2B4D" }}
+    >
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h2

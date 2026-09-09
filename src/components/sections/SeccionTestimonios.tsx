@@ -5,7 +5,11 @@ import MarcadorDeFoto from "@/components/ui/MarcadorDeFoto"
 export default function SeccionTestimonios() {
   const { textos } = useIdioma()
   return (
-    <section className="py-16 px-6" style={{ background: "#F2F4F7" }}>
+    <section
+      id="testimonios"
+      className="py-16 px-6 scroll-mt-24"
+      style={{ background: "#F2F4F7" }}
+    >
       <div className="max-w-5xl mx-auto">
         <h2
           className="text-4xl md:text-5xl mb-8"
