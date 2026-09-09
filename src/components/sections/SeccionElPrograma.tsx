@@ -1,7 +1,6 @@
 import { useIdioma } from "@/i18n/ContextoIdioma"
-import MarcadorDeFoto from "@/components/ui/MarcadorDeFoto"
 
-// bloque "el programa" sobre fondo navy
+// bloque "el programa" sobre fondo navy, con foto al lado
 export default function SeccionElPrograma() {
   const { textos } = useIdioma()
   return (
@@ -25,7 +24,11 @@ export default function SeccionElPrograma() {
             {textos.about.body}
           </p>
         </div>
-        <MarcadorDeFoto etiqueta={textos.photoLabels.team} esAlta />
+        <img
+          src="/img/stock1.jpg"
+          alt="Emprende180"
+          className="rounded-2xl w-full object-cover"
+        />
       </div>
     </section>
   )

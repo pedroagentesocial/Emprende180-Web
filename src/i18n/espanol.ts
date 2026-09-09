@@ -1,3 +1,11 @@
+export type EnlaceNavegacion = {
+  titulo: string
+  // id de la seccion en la misma pagina (scroll suave)
+  id?: string
+  // ruta de otra pagina de la app (ej. "/blog")
+  ruta?: string
+}
+
 export type AlineacionPortada = "izquierda" | "derecha"
 
 export type Portada = {
@@ -19,7 +27,9 @@ const espanol = {
       { titulo: "Valores", id: "valores" },
       { titulo: "Embajadores", id: "testimonios" },
       { titulo: "Preguntas", id: "preguntas" },
-    ],
+      { titulo: "Ubicación", id: "ubicacion" },
+      { titulo: "Blog", ruta: "/blog" },
+    ] as EnlaceNavegacion[],
   },
   hero: {
     // un video de fondo con su propio texto; agregar una portada mas aca es suficiente
@@ -96,22 +106,27 @@ const espanol = {
     items: [
       {
         name: "Enfoque",
+        icono: "enfoque",
         desc: "Sin distracciones. Un mensaje, una persona, un resultado a la vez.",
       },
       {
         name: "Acción",
+        icono: "accion",
         desc: "La constancia vence a la intensidad. Dos horas diarias construyen algo real.",
       },
       {
         name: "Comunidad",
+        icono: "comunidad",
         desc: "No trabajas solo. Tienes una red activa de embajadores en cada fase.",
       },
       {
         name: "Crecimiento",
+        icono: "crecimiento",
         desc: "Cada fase te acerca un paso más a dejar de improvisar.",
       },
       {
         name: "Transformación",
+        icono: "transformacion",
         desc: "El Día 90 eres una versión diferente de quien empezó el Día 1.",
       },
     ],
@@ -160,6 +175,16 @@ const espanol = {
       },
     ],
   },
+  ubicacion: {
+    titulo: "Visítanos",
+    direccion: "1515 East Fort Union Blvd, Cottonwood Heights, UT 84121, EE. UU.",
+  },
+  blog: {
+    titulo: "Blog",
+  },
+  privacidad: {
+    titulo: "Política de Privacidad",
+  },
   finalCta: {
     headline: "¿Listo para el Día 1?",
     sub: "La constancia vence a la intensidad. Dos horas al día durante 90 días.",
@@ -168,6 +193,7 @@ const espanol = {
   footer: {
     tagline: "Tu Giro de 180° Empieza Aquí",
     copy: "© 2024 Emprende180. Todos los derechos reservados.",
+    privacidad: "Política de Privacidad",
   },
   photoLabels: {
     community: "Comunidad Emprende180",

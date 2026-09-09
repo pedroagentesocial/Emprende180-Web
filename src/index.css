@@ -111,6 +111,16 @@ h2, h3, h4 {
   transform: scaleX(1);
 }
 
+/* iconos de redes sociales del pie */
+.icono-social {
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.icono-social:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
 /* caja punteada para marcar donde va una foto */
 .marcador-foto {
   background: linear-gradient(135deg, #e8edf2 0%, #d4dce6 100%);

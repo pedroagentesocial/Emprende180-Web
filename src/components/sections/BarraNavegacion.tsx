@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react"
 import { useIdioma } from "@/i18n/ContextoIdioma"
+import { useRutas } from "@/lib/ContextoRutas"
 import irALaSeccion from "@/lib/irALaSeccion"
 
+type PropsBarraNavegacion = {
+  // false en paginas sin video de fondo, para que la barra siempre use fondo claro
+  sobreVideo?: boolean
+}
+
 // barra fija con blur; sobre el video usa tinte navy y al bajar pasa a fondo claro
-export default function BarraNavegacion() {
+export default function BarraNavegacion({ sobreVideo = true }: PropsBarraNavegacion) {
   const { idioma, cambiarIdioma, textos } = useIdioma()
+  const { ruta, navegar } = useRutas()
   const [estaDesplazada, setEstaDesplazada] = useState(false)
+  const fondoClaro = estaDesplazada || !sobreVideo
 
   useEffect(() => {
     const alHacerScroll = () => setEstaDesplazada(window.scrollY > 50)
@@ -17,12 +25,12 @@ export default function BarraNavegacion() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: estaDesplazada ? "rgba(242,244,247,0.95)" : "rgba(9,31,56,0.4)",
+        background: fondoClaro ? "rgba(242,244,247,0.95)" : "rgba(9,31,56,0.4)",
         backdropFilter: "blur(12px)",
-        borderBottom: estaDesplazada
+        borderBottom: fondoClaro
           ? "1px solid rgba(13,43,77,0.08)"
           : "1px solid rgba(255,255,255,0.15)",
-        boxShadow: estaDesplazada
+        boxShadow: fondoClaro
           ? "0 1px 8px rgba(13,43,77,0.08)"
           : "0 2px 14px rgba(9,31,56,0.28)",
       }}
@@ -31,7 +39,11 @@ export default function BarraNavegacion() {
       <div className="px-8 md:px-16 lg:px-24 py-3.5 flex items-center justify-between">
         {/* el logo va en blanco sobre el video y al tocarlo vuelve al inicio */}
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() =>
+            ruta === "/"
+              ? window.scrollTo({ top: 0, behavior: "smooth" })
+              : navegar("/")
+          }
           aria-label="Volver al inicio"
           className="cursor-pointer"
         >
@@ -39,17 +51,21 @@ export default function BarraNavegacion() {
             src="/img/logo_hor.png"
             alt="Emprende180"
             className="h-12 transition-all duration-300"
-            style={{ filter: estaDesplazada ? "none" : "brightness(0) invert(1)" }}
+            style={{ filter: fondoClaro ? "none" : "brightness(0) invert(1)" }}
           />
         </button>
-        {/* enlaces a las secciones de la pagina */}
-        <div className="hidden lg:flex items-center gap-6">
+        {/* enlaces a secciones de esta pagina o a otras paginas */}
+        <div className="hidden xl:flex items-center gap-6">
           {textos.nav.links.map((enlace) => (
             <button
-              key={enlace.id}
-              onClick={() => irALaSeccion(enlace.id)}
+              key={enlace.titulo}
+              onClick={() => {
+                if (enlace.ruta) navegar(enlace.ruta)
+                else if (ruta !== "/") navegar("/", enlace.id)
+                else if (enlace.id) irALaSeccion(enlace.id)
+              }}
               className="enlace-navegacion text-sm cursor-pointer"
-              style={{ color: estaDesplazada ? "#0D2B4D" : "#FFFFFF" }}
+              style={{ color: fondoClaro ? "#0D2B4D" : "#FFFFFF" }}
             >
               {enlace.titulo}
             </button>
@@ -60,8 +76,8 @@ export default function BarraNavegacion() {
             onClick={() => cambiarIdioma(idioma === "es" ? "en" : "es")}
             className="px-3.5 py-1.5 rounded-full text-sm font-semibold border transition-all duration-200 hover:scale-105"
             style={{
-              borderColor: estaDesplazada ? "#0D2B4D" : "rgba(255,255,255,0.7)",
-              color: estaDesplazada ? "#0D2B4D" : "#FFFFFF",
+              borderColor: fondoClaro ? "#0D2B4D" : "rgba(255,255,255,0.7)",
+              color: fondoClaro ? "#0D2B4D" : "#FFFFFF",
               background: "transparent",
             }}
           >
@@ -69,10 +85,10 @@ export default function BarraNavegacion() {
           </button>
           {/* "unete" lleva al boton con id="join" del hero */}
           <button
-            onClick={() => irALaSeccion("join")}
+            onClick={() => (ruta !== "/" ? navegar("/", "join") : irALaSeccion("join"))}
             className="boton-cta px-5 py-2 rounded-full text-sm font-bold hidden sm:block"
             style={{
-              background: estaDesplazada ? "#0D2B4D" : "#11A79D",
+              background: fondoClaro ? "#0D2B4D" : "#11A79D",
               color: "#FFFFFF",
             }}
           >

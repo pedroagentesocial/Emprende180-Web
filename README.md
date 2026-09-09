@@ -24,9 +24,15 @@ pnpm format   # oxfmt
 
 ```
 src/
-├── App.tsx                              # composición de secciones dentro del ProveedorIdioma
+├── App.tsx                              # router de la aplicacion (inicio, blog, privacidad)
 ├── main.tsx                             # entrypoint
 ├── index.css                            # Tailwind, fuentes, tokens y animaciones
+├── pages/
+│   ├── Inicio.tsx                       # la landing completa (todas las secciones)
+│   ├── PaginaBlog.tsx                   # blog; por ahora vacia
+│   └── PaginaPoliticaPrivacidad.tsx     # politica de privacidad; por ahora vacia
+├── layouts/
+│   └── DisposicionPagina.tsx            # barra + contenido + pie para paginas internas
 ├── i18n/
 │   ├── espanol.ts                       # textos en español (exporta el tipo Traduccion)
 │   ├── ingles.ts                        # textos en inglés, tipado contra espanol.ts
@@ -49,6 +55,7 @@ src/
 │       ├── SeccionValores.tsx           # los 5 valores
 │       ├── SeccionTestimonios.tsx       # testimonios de embajadores
 │       ├── SeccionPreguntasFrecuentes.tsx # preguntas frecuentes (acordeón)
+│       ├── SeccionUbicacion.tsx         # direccion de las oficinas + mapa de google
 │       ├── SeccionInvitacionFinal.tsx   # banda final de invitación
 │       └── PieDePagina.tsx              # pie de página
 └── assets/fonts/                        # Lil Grotesk (woff2 local)

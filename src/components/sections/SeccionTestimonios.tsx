@@ -1,5 +1,4 @@
 import { useIdioma } from "@/i18n/ContextoIdioma"
-import MarcadorDeFoto from "@/components/ui/MarcadorDeFoto"
 
 // testimonios de embajadores en 3 tarjetas
 export default function SeccionTestimonios() {
@@ -62,7 +61,12 @@ export default function SeccionTestimonios() {
             </div>
           ))}
         </div>
-        <MarcadorDeFoto etiqueta={textos.photoLabels.success} />
+        <img
+          src="/img/stock2.jpg"
+          alt="Emprende180"
+          className="rounded-2xl w-full h-58.5 object-cover"
+          style={{ objectPosition: "50% 20%" }}
+        />
       </div>
     </section>
   )

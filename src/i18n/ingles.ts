@@ -10,6 +10,8 @@ const ingles: Traduccion = {
       { titulo: "Values", id: "valores" },
       { titulo: "Ambassadors", id: "testimonios" },
       { titulo: "FAQ", id: "preguntas" },
+      { titulo: "Location", id: "ubicacion" },
+      { titulo: "Blog", ruta: "/blog" },
     ],
   },
   hero: {
@@ -87,22 +89,27 @@ const ingles: Traduccion = {
     items: [
       {
         name: "Focus",
+        icono: "enfoque",
         desc: "No distractions. One message, one person, one result at a time.",
       },
       {
         name: "Action",
+        icono: "accion",
         desc: "Consistency beats intensity. Two hours a day builds something real.",
       },
       {
         name: "Community",
+        icono: "comunidad",
         desc: "You don't work alone. You have an active ambassador network at every phase.",
       },
       {
         name: "Growth",
+        icono: "crecimiento",
         desc: "Every phase brings you one step closer to stopping the improvising.",
       },
       {
         name: "Transformation",
+        icono: "transformacion",
         desc: "On Day 90 you are a different version of who started on Day 1.",
       },
     ],
@@ -151,6 +158,16 @@ const ingles: Traduccion = {
       },
     ],
   },
+  ubicacion: {
+    titulo: "Visit Us",
+    direccion: "1515 East Fort Union Blvd, Cottonwood Heights, UT 84121, USA",
+  },
+  blog: {
+    titulo: "Blog",
+  },
+  privacidad: {
+    titulo: "Privacy Policy",
+  },
   finalCta: {
     headline: "Ready for Day 1?",
     sub: "Consistency beats intensity. Two hours a day for 90 days.",
@@ -159,6 +176,7 @@ const ingles: Traduccion = {
   footer: {
     tagline: "Your 180° Turn Starts Here",
     copy: "© 2024 Emprende180. All rights reserved.",
+    privacidad: "Privacy Policy",
   },
   photoLabels: {
     community: "Emprende180 Community",
