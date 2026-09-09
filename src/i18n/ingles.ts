@@ -3,9 +3,28 @@ import type { Traduccion } from "./espanol"
 const ingles: Traduccion = {
   nav: { cta: "Join", lang: "ES" },
   hero: {
-    headline: "Your 180° Turn",
-    headline2: "Starts Here",
-    sub: "A 90-day program to build your own business with method, consistency, and real support.",
+    // one background video with its own text; add another entry here for more videos
+    portadas: [
+      {
+        video: "/img/Portada_1.mp4",
+        alineacion: "izquierda",
+        titulo: "Your 180° Turn",
+        titulo2: "Starts Here",
+        sub: "A 90-day program to build your own business with method, consistency, and real support.",
+      },
+      {
+        video: "/img/Portada_2.mp4",
+        alineacion: "derecha",
+        titulo: "Build While Your Baby Rests",
+      },
+      {
+        video: "/img/Portada_3.mp4",
+        alineacion: "izquierda",
+        titulo: "Family Comes First",
+        titulo2: "Your Business Too",
+        sub: "Build your own source of income at your family's pace: between breakfasts, homework, and everything your days already hold.",
+      },
+    ],
     cta: "Start Day 1",
     note: "Only 2 hours a day. No upfront investment.",
   },

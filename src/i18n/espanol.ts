@@ -1,9 +1,39 @@
+export type AlineacionPortada = "izquierda" | "derecha"
+
+export type Portada = {
+  video: string
+  alineacion: AlineacionPortada
+  titulo: string
+  // segunda linea del titulo (en menta) y parrafo de apoyo, ambos opcionales
+  titulo2?: string
+  sub?: string
+}
+
 const espanol = {
   nav: { cta: "Únete", lang: "EN" },
   hero: {
-    headline: "Tu Giro de 180°",
-    headline2: "Empieza Aquí",
-    sub: "Un programa de 90 días para construir un negocio propio con método, constancia y acompañamiento real.",
+    // un video de fondo con su propio texto; agregar una portada mas aca es suficiente
+    portadas: [
+      {
+        video: "/img/Portada_1.mp4",
+        alineacion: "izquierda",
+        titulo: "Tu Giro de 180°",
+        titulo2: "Empieza Aquí",
+        sub: "Un programa de 90 días para construir un negocio propio con método, constancia y acompañamiento real.",
+      },
+      {
+        video: "/img/Portada_2.mp4",
+        alineacion: "derecha",
+        titulo: "Emprende mientras tu Bebé Descansa",
+      },
+      {
+        video: "/img/Portada_3.mp4",
+        alineacion: "izquierda",
+        titulo: "Tu Familia Primero",
+        titulo2: "Tu Negocio También",
+        sub: "Construye tu fuente de ingresos propia al ritmo de tu casa: entre desayunos, tareas y todo lo que haces todos los días.",
+      },
+    ] as Portada[],
     cta: "Comenzar el Día 1",
     note: "Solo 2 horas al día. Sin inversión inicial.",
   },
