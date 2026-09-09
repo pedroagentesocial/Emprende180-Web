@@ -42,16 +42,25 @@ const espanol = {
         sub: "Un programa de 90 días para construir un negocio propio con método, constancia y acompañamiento real.",
       },
       {
-        video: "/img/Portada_2.mp4",
-        alineacion: "derecha",
-        titulo: "Emprende mientras tu Bebé Descansa",
-      },
-      {
         video: "/img/Portada_3.mp4",
-        alineacion: "izquierda",
+        alineacion: "derecha",
         titulo: "Tu Familia Primero",
         titulo2: "Tu Negocio También",
         sub: "Construye tu fuente de ingresos propia al ritmo de tu casa: entre desayunos, tareas y todo lo que haces todos los días.",
+      },
+      {
+        video: "/img/Portada_2.mp4",
+        alineacion: "izquierda",
+        titulo: "Emprende mientras",
+        titulo2: "tu Bebé Descansa",
+        sub: "No necesitas salir a trabajar 8 horas ni descuidar a tu familia para tener tu propio dinero."
+      },
+      {
+        video: "/img/Portada_4.mov",
+        alineacion: "derecha",
+        titulo: "Sin improvisar:",
+        titulo2: "Te damos un plan diario.",
+        sub: "¿No sabes qué publicar ni qué decir? Nuestro Plan de 90 días te da las misiones exactas para cada día.",
       },
     ] as Portada[],
     cta: "Comenzar el Día 1",
