@@ -25,7 +25,7 @@ export default function SeccionElPrograma() {
           </p>
         </div>
         <img
-          src="/img/stock1.jpg"
+          src="/img/programa.jpg"
           alt="Emprende180"
           className="rounded-2xl w-full object-cover"
         />
