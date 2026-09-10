@@ -192,6 +192,10 @@ const ingles: Traduccion = {
     team: "Our Ambassadors",
     success: "Success Stories",
   },
+  contacto: {
+    // accessible label for the floating contact button
+    aria: "Contact us",
+  },
 }
 
 export default ingles

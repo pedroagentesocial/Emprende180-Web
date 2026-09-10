@@ -209,6 +209,10 @@ const espanol = {
     team: "Nuestros Embajadores",
     success: "Historias de Éxito",
   },
+  contacto: {
+    // etiqueta accesible del boton flotante de contacto
+    aria: "Contáctanos",
+  },
 }
 
 export type Traduccion = typeof espanol

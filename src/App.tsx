@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import BotonContactoFlotante from "@/components/ui/BotonContactoFlotante"
 import ProveedorIdioma from "@/i18n/ContextoIdioma"
 import ProveedorRutas, { useRutas } from "@/lib/ContextoRutas"
 import Inicio from "@/pages/Inicio"
@@ -28,6 +29,8 @@ export default function App() {
     <ProveedorIdioma>
       <ProveedorRutas>
         <PaginaActual />
+        {/* boton de contacto flotante: visible en todas las paginas */}
+        <BotonContactoFlotante />
       </ProveedorRutas>
     </ProveedorIdioma>
   )

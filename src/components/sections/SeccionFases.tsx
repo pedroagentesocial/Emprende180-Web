@@ -40,7 +40,7 @@ export default function SeccionFases() {
                 {/* numero decorativo + rango de dias */}
                 <div className="flex-shrink-0 flex flex-row md:flex-col gap-3 items-center md:items-start">
                   <span
-                    className="text-5xl font-black opacity-15"
+                    className="text-5xl font-black opacity-30"
                     style={{ color: "#11A79D", fontFamily: "Lil Grotesk Heavy, sans-serif", fontWeight: 900 }}
                   >
                     {fase.num}
@@ -64,8 +64,7 @@ export default function SeccionFases() {
                       fontWeight: 700,
                     }}
                   >
-                    {idioma === "es" ? "Fase " : "Phase "}
-                    {indice + 1} — {fase.name}
+                    {fase.name}
                   </h3>
                   {/* distribucion diaria de tiempo de la fase */}
                   <p

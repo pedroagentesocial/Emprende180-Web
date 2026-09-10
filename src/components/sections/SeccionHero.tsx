@@ -20,7 +20,12 @@ function ContenidoPortada({ portada, cta, nota }: PropsContenidoPortada) {
         esDerecha ? "flex justify-end" : ""
       }`}
     >
-      <div className={`max-w-xl animacion-aparecer ${esDerecha ? "text-right" : ""}`}>
+      {/* a la derecha el texto aprovecha mas espacio hacia la izquierda para no cortarse en tantos renglones */}
+      <div
+        className={`max-w-xl animacion-aparecer ${
+          esDerecha ? "text-right lg:max-w-[650px]" : ""
+        }`}
+      >
         <h1
           className="mb-5"
           style={{
