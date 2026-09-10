@@ -134,3 +134,23 @@ h2, h3, h4 {
   inset: 0;
   background: linear-gradient(135deg, transparent 40%, rgba(167,225,218,0.15) 100%);
 }
+
+/* revelado al desplazar: los bloques entran suaves la primera vez que se ven */
+.revelar-al-desplazar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.revelar-al-desplazar--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* respeta a quien pide menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .revelar-al-desplazar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

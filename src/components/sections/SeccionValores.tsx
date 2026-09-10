@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { useIdioma } from "@/i18n/ContextoIdioma"
+import RevelarAlDesplazar from "@/components/ui/RevelarAlDesplazar"
 
 // icono de cada valor, en teal como el resto de detalles
 const iconosDeValores: Record<string, ReactNode> = {
@@ -47,12 +48,14 @@ export default function SeccionValores() {
       style={{ background: "#0D2B4D" }}
     >
       <div className="max-w-5xl mx-auto">
-        <h2
-          className="text-4xl md:text-5xl text-center mb-8"
-          style={{ color: "#FFFFFF", fontFamily: "Lil Grotesk Bold, sans-serif" }}
-        >
-          {textos.values.title}
-        </h2>
+        <RevelarAlDesplazar>
+          <h2
+            className="text-4xl md:text-5xl text-center mb-8"
+            style={{ color: "#FFFFFF", fontFamily: "Lil Grotesk Bold, sans-serif" }}
+          >
+            {textos.values.title}
+          </h2>
+        </RevelarAlDesplazar>
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px"
           style={{
@@ -65,22 +68,29 @@ export default function SeccionValores() {
           {textos.values.items.map((valor, indice) => (
             <div
               key={indice}
-              className="flex flex-col items-center gap-3 p-6 text-center"
+              className="p-6 text-center"
               style={{ background: "#0D2B4D" }}
             >
-              {iconosDeValores[valor.icono]}
-              <h4
-                className="font-bold text-base"
-                style={{ color: "#FFFFFF" }}
+              {/* solo se revela el contenido: mover la celda romperia el truco
+                  de los bordes de 1px de la rejilla */}
+              <RevelarAlDesplazar
+                retraso={indice * 100}
+                className="flex flex-col items-center gap-3"
               >
-                {valor.name}
-              </h4>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: "#FFFFFF", opacity: 0.8 }}
-              >
-                {valor.desc}
-              </p>
+                {iconosDeValores[valor.icono]}
+                <h4
+                  className="font-bold text-base"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {valor.name}
+                </h4>
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: "#FFFFFF", opacity: 0.8 }}
+                >
+                  {valor.desc}
+                </p>
+              </RevelarAlDesplazar>
             </div>
           ))}
         </div>

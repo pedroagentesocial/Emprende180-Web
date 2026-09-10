@@ -1,4 +1,5 @@
 import { useIdioma } from "@/i18n/ContextoIdioma"
+import RevelarAlDesplazar from "@/components/ui/RevelarAlDesplazar"
 
 // bloque "el programa" sobre fondo navy, con foto al lado
 export default function SeccionElPrograma() {
@@ -10,7 +11,7 @@ export default function SeccionElPrograma() {
       style={{ background: "#0D2B4D" }}
     >
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div>
+        <RevelarAlDesplazar>
           <h2
             className="text-4xl md:text-5xl mb-4"
             style={{ color: "#FFFFFF", fontFamily: "Lil Grotesk Bold, sans-serif" }}
@@ -23,12 +24,14 @@ export default function SeccionElPrograma() {
           >
             {textos.about.body}
           </p>
-        </div>
-        <img
-          src="/img/programa.jpg"
-          alt="Emprende180"
-          className="rounded-2xl w-full object-cover"
-        />
+        </RevelarAlDesplazar>
+        <RevelarAlDesplazar retraso={150}>
+          <img
+            src="/img/programa.jpg"
+            alt="Emprende180"
+            className="rounded-2xl w-full object-cover"
+          />
+        </RevelarAlDesplazar>
       </div>
     </section>
   )
