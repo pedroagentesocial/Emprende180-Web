@@ -57,18 +57,17 @@ export default function SeccionValores() {
           </h2>
         </RevelarAlDesplazar>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px"
+          className="rejilla-valores grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px"
           style={{
             background: "rgba(167,225,218,0.1)",
             border: "1px solid rgba(167,225,218,0.1)",
             borderRadius: "16px",
-            overflow: "hidden",
           }}
         >
           {textos.values.items.map((valor, indice) => (
             <div
               key={indice}
-              className="p-6 text-center"
+              className="celda-valor p-6 text-center"
               style={{ background: "#0D2B4D" }}
             >
               {/* solo se revela el contenido: mover la celda romperia el truco

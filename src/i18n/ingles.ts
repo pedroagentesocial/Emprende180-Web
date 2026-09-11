@@ -147,7 +147,8 @@ const ingles: Traduccion = {
     ],
   },
   faq: {
-    title: "Frequently Asked Questions",
+    // the line break keeps "Frequently Asked" on top and "Questions" below
+    title: "Frequently Asked\nQuestions",
     items: [
       {
         q: "Do I need prior experience?",

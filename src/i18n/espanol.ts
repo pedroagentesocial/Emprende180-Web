@@ -164,7 +164,8 @@ const espanol = {
     ],
   },
   faq: {
-    title: "Preguntas frecuentes",
+    // el salto de linea deja "Preguntas" arriba y "frecuentes" abajo
+    title: "Preguntas\nfrecuentes",
     items: [
       {
         q: "¿Necesito experiencia previa?",

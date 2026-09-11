@@ -72,13 +72,44 @@ h2, h3, h4 {
 
 .animacion-aparecer { animation: aparecer 0.6s ease-out; }
 
-/* tarjeta de fase, se eleva al pasar el cursor */
-.tarjeta-fase {
+/* celdas de la rejilla de valores: se levantan al pasar el cursor */
+.celda-valor {
+  position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.tarjeta-fase:hover {
+.celda-valor:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(13, 43, 77, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* esquinas redondeadas de las celdas de las esquinas, segun el breakpoint
+   de la rejilla (el contenedor ya no recorta con overflow hidden para que
+   el levante no se corte en las orillas) */
+@media (max-width: 639px) {
+  .rejilla-valores .celda-valor:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .rejilla-valores .celda-valor:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .rejilla-valores .celda-valor:nth-child(1) { border-top-left-radius: 15px; }
+  .rejilla-valores .celda-valor:nth-child(2) { border-top-right-radius: 15px; }
+  .rejilla-valores .celda-valor:nth-child(5) { border-bottom-left-radius: 15px; }
+}
+@media (min-width: 1024px) {
+  .rejilla-valores .celda-valor:nth-child(1) {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  .rejilla-valores .celda-valor:nth-child(5) {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
 /* botones cta */
