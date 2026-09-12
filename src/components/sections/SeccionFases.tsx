@@ -1,16 +1,26 @@
 import { useIdioma } from "@/i18n/ContextoIdioma"
 import RevelarAlDesplazar from "@/components/ui/RevelarAlDesplazar"
 
-// las 4 fases del programa en tarjetas
+// foto descriptiva de cada fase, en el orden en que aparecen
+const FOTOS_FASES = [
+  "/img/fase1.jpg",
+  "/img/fase2.jpg",
+  "/img/fase3.jpg",
+  "/img/fase4.jpg",
+]
+
+// las 4 fases del programa en filas tipo zig-zag: la foto va a sangre,
+// pegada a una orilla de la pantalla, y el texto al lado; el lado de la
+// foto se alterna en cada fila (1 izq, 2 der, 3 izq, 4 der)
 export default function SeccionFases() {
-  const { idioma, textos } = useIdioma()
+  const { textos } = useIdioma()
   return (
     <section
       id="fases"
-      className="py-16 px-6 scroll-mt-24"
+      className="py-16 scroll-mt-24"
       style={{ background: "#F2F4F7" }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto [800px]">
         <RevelarAlDesplazar className="mb-10">
           <h2
             className="text-4xl md:text-5xl mb-3"
@@ -25,38 +35,49 @@ export default function SeccionFases() {
             {textos.phases.sub}
           </p>
         </RevelarAlDesplazar>
+      </div>
 
-        <div className="space-y-4">
-          {textos.phases.items.map((fase, indice) => (
+      <div>
+        {textos.phases.items.map((fase, indice) => {
+          // filas impares: foto a la izquierda; pares: foto a la derecha
+          const fotoIzquierda = indice % 2 === 0
+          return (
             <RevelarAlDesplazar key={indice} retraso={100 + indice * 100}>
-              <div
-                className="tarjeta-fase p-6 md:p-7 rounded-2xl"
-                style={{
-                  background: "white",
-                  border: "1.5px solid rgba(13,43,77,0.08)",
-                  boxShadow: "0 2px 8px rgba(13,43,77,0.04)",
-                }}
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* numero decorativo + rango de dias */}
-                  <div className="flex-shrink-0 flex flex-row md:flex-col gap-3 items-center md:items-start">
-                    <span
-                      className="text-5xl font-black opacity-30"
-                      style={{ color: "#11A79D", fontFamily: "Lil Grotesk Heavy, sans-serif", fontWeight: 900 }}
-                    >
-                      {fase.num}
-                    </span>
-                    <span
-                      className="px-3 py-1 rounded-full text-xs font-semibold"
-                      style={{
-                        background: "rgba(17,167,157,0.1)",
-                        color: "#11A79D",
-                      }}
-                    >
-                      {fase.days}
-                    </span>
-                  </div>
-                  <div className="flex-1">
+              <div className="grid md:grid-cols-2">
+                {/* foto a sangre, pegada a la orilla de la pantalla */}
+                <div
+                  className={`relative h-56 md:h-auto md:min-h-[20rem] ${
+                    fotoIzquierda ? "" : "md:order-2"
+                  }`}
+                >
+                  <img
+                    src={FOTOS_FASES[indice]}
+                    alt={fase.name}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                {/* bloque de texto con padding en las orillas */}
+                <div className="flex items-center px-6 py-8 md:px-16 md:py-10 lg:px-20">
+                  <div className="max-w-xl mx-auto">
+                    {/* numero decorativo + rango de dias */}
+                    <div className="flex flex-row items-center gap-4 mb-4">
+                      <span
+                        className="text-5xl font-black opacity-30"
+                        style={{ color: "#11A79D", fontFamily: "Lil Grotesk Heavy, sans-serif", fontWeight: 900 }}
+                      >
+                        {fase.num}
+                      </span>
+                      <span
+                        className="px-3 py-1 rounded-full text-xs font-semibold"
+                        style={{
+                          background: "rgba(17,167,157,0.1)",
+                          color: "#11A79D",
+                        }}
+                      >
+                        {fase.days}
+                      </span>
+                    </div>
                     <h3
                       className="text-2xl mb-1"
                       style={{
@@ -84,8 +105,8 @@ export default function SeccionFases() {
                 </div>
               </div>
             </RevelarAlDesplazar>
-          ))}
-        </div>
+          )
+        })}
       </div>
     </section>
   )

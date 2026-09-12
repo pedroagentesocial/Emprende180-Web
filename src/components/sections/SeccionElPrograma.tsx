@@ -27,7 +27,7 @@ export default function SeccionElPrograma() {
         </RevelarAlDesplazar>
         <RevelarAlDesplazar retraso={150}>
           <img
-            src="/img/programa.jpg"
+            src="/img/elprograma.jpg"
             alt="Emprende180"
             className="rounded-2xl w-full object-cover"
           />

@@ -20,10 +20,12 @@ export default function PreguntaFrecuente({ pregunta, respuesta }: PropsPregunta
         <span className="font-semibold text-base" style={{ color: "#0D2B4D" }}>
           {pregunta}
         </span>
+        {/* circulo verde con el simbolo en blanco; rota al abrir */}
         <span
-          className="text-xl flex-shrink-0 transition-transform duration-200"
+          className="w-8 h-8 rounded-full flex items-center justify-center text-xl flex-shrink-0 transition-transform duration-200"
           style={{
-            color: "#11A79D",
+            background: "#11A79D",
+            color: "#FFFFFF",
             transform: estaAbierta ? "rotate(45deg)" : "rotate(0deg)",
           }}
         >
